@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Menu from '../components/Menu'
 
 export default function About() {
   return (
@@ -6,7 +7,8 @@ export default function About() {
       <Head>
         <title>About - Lilla Björn</title>
       </Head>
-        <main>
+      <Menu />
+      <main>
           <h1>About Us</h1>
           <p>
             We create handcrafted baby toys from sustainably sourced Swedish wood. Each toy is made with love and care.
