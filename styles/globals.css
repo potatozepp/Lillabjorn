@@ -72,3 +72,14 @@ h1 {
   display: block;
 }
 
+/* Search form */
+.menu .search {
+  margin-top: 0.5rem;
+}
+
+.menu .search input {
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--corner-radius);
+  border: 1px solid #ccc;
+}
+
