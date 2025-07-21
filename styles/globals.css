@@ -83,3 +83,37 @@ h1 {
   border: 1px solid #ccc;
 }
 
+
+/* Floating basket button */
+.basket-button {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.basket-button svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.basket {
+  position: fixed;
+  bottom: 4rem;
+  right: 1rem;
+  background: #fff;
+  border-radius: var(--corner-radius);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+}
