@@ -1,12 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=DM+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mansalva&display=swap');
+
 
 :root {
-  --background-color: #e7e4d9;
+  --background-color: #eefdef;
   --primary-color: #a490b8;
   --accent-color: #81af8f;
   --font-family: 'Poppins', 'DM Sans', Arial, sans-serif;
   --corner-radius: 20px;
 }
+
 
 body {
   font-family: var(--font-family);
@@ -27,6 +30,8 @@ main {
 
 h1 {
   color: var(--primary-color);
+  font-family: 'Mansalva', Arial, sans-serif;
+
 }
 
 /* Navigation menu */

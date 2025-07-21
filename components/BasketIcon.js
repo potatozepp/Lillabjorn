@@ -10,13 +10,10 @@ export default function BasketIcon() {
         aria-label="Shopping basket"
         onClick={() => setOpen(!open)}
       >
-        <svg
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          aria-hidden="true"
-        >
-          <path d="M7 4h-2l-3 7v2h2l3-7h10l3 7h2v-2l-3-7h-2l-3-4h-4l-3 4zM4 14h16v8h-16v-8z" fill="currentColor"/>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm3.5-1.5c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm1.336-5l1.977-7h-16.813l2.938 7h11.898zm4.969-10l-3.432 12h-12.597l.839 2h13.239l3.474-12h1.929l.743-2h-4.195z"/>
         </svg>
+        
       </button>
       {open && (
         <div className="basket">

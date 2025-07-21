@@ -11,9 +11,12 @@ export default function Gallery() {
       <main>
         <h1>Gallery</h1>
         <div className="cards">
-          <img src="/1000020778.jpg" alt="friends 1" className="card" />
+          <img src="/1000020784.jpg" alt="friends 1" className="card" />
           <img src="/1000020779.jpg" alt="friends 2" className="card" />
           <img src="/1000020780.jpg" alt="friends 3" className="card" />
+          <img src="/1000020781.jpg" alt="friends 1" className="card" />
+          <img src="/1000020782.jpg" alt="friends 2" className="card" />
+          <img src="/1000020783.jpg" alt="friends 3" className="card" />
         </div>
       </main>
     </div>
