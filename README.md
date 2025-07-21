@@ -26,6 +26,12 @@ npm run build
 npm start
 ```
 
+## Testing
+Run the Jest test suite:
+```bash
+npm test
+```
+
 ## Docker
 
 A `Dockerfile` is provided to run the site in a container. Build and run:
