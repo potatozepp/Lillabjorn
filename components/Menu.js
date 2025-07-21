@@ -3,6 +3,9 @@ import Link from 'next/link'
 export default function Menu() {
   return (
     <nav className="menu">
+      <Link href="/" className="logo-link">
+        <img src="/logo.svg" alt="Lilla Björn logo" className="logo" />
+      </Link>
       <ul>
         <li><Link href="/">Home</Link></li>
         <li><Link href="/about">About</Link></li>
