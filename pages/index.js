@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Menu from '../components/Menu'
+import ImageGrid from '../components/ImageGrid'
 
 export default function Home() {
   return (
@@ -32,14 +33,16 @@ export default function Home() {
 
         <section>
           <h2>Gallery Preview</h2>
-          <div className="cards">
-            <img src="/1000020784.jpg" alt="friends 1" className="card" />
-            <img src="/1000020779.jpg" alt="friends 2" className="card" />
-            <img src="/1000020780.jpg" alt="friends 3" className="card" />
-            <img src="/1000020781.jpg" alt="friends 1" className="card" />
-            <img src="/1000020782.jpg" alt="friends 2" className="card" />
-            <img src="/1000020783.jpg" alt="friends 3" className="card" />
-          </div>
+          <ImageGrid
+            images={[
+              { src: '/1000020784.jpg', alt: 'friends 1' },
+              { src: '/1000020779.jpg', alt: 'friends 2' },
+              { src: '/1000020780.jpg', alt: 'friends 3' },
+              { src: '/1000020781.jpg', alt: 'friends 1' },
+              { src: '/1000020782.jpg', alt: 'friends 2' },
+              { src: '/1000020783.jpg', alt: 'friends 3' },
+            ]}
+          />
         </section>
       </main>
     </div>
