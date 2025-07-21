@@ -7,5 +7,6 @@ describe('Menu component', () => {
     expect(screen.getByRole('link', { name: 'Home' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'About' })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: 'Gallery' })).toBeInTheDocument()
+    expect(screen.getByRole('link', { name: 'Impressum' })).toBeInTheDocument()
   })
 })

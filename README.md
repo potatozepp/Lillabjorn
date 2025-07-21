@@ -46,4 +46,5 @@ The site will be available at `http://localhost:3000`.
 ## Adding Pages
 
 Create files inside the `pages/` directory. Each file becomes a route. For example, `pages/about.js` is available at `/about`.
+An `/impressum` page is also included with legal details.
 
