@@ -18,3 +18,46 @@ main {
 h1 {
   color: #2c3e50;
 }
+
+/* Navigation menu */
+.menu {
+  background-color: #ffe0e9;
+  padding: 1rem 0;
+  border-bottom: 2px solid #f6c5d8;
+  text-align: center;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #d6336c;
+  font-weight: bold;
+}
+
+/* Card styles */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 200px;
+  text-align: center;
+  display: block;
+}
+
