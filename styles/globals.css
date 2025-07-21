@@ -2,8 +2,8 @@
 
 :root {
   --background-color: #e7e4d9;
-  --primary-color: #737352;
-  --accent-color: #f2b885;
+  --primary-color: #a490b8;
+  --accent-color: #81af8f;
   --font-family: 'Poppins', 'DM Sans', Arial, sans-serif;
   --corner-radius: 20px;
 }
@@ -13,7 +13,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--background-color);
-  color: #333;
+  color: var(--primary-color);
 }
 
 main {
@@ -49,7 +49,7 @@ h1 {
 
 .menu a {
   text-decoration: none;
-  color: var(--primary-color);
+  color: #fffdfd;
   font-weight: bold;
 }
 
