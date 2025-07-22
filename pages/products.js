@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Menu from '../components/Menu'
+import FadeInSection from '../components/FadeInSection'
 import { useRouter } from 'next/router'
 
 const products = [
@@ -22,13 +23,15 @@ export default function Products() {
       </Head>
       <Menu />
       <main>
-        <h1>Products</h1>
-        <ul>
-          {filtered.map(p => (
-            <li key={p.id}>{p.name}</li>
-          ))}
-        </ul>
-        {filtered.length === 0 && <p>No products found.</p>}
+        <FadeInSection>
+          <h1>Products</h1>
+          <ul>
+            {filtered.map(p => (
+              <li key={p.id}>{p.name}</li>
+            ))}
+          </ul>
+          {filtered.length === 0 && <p>No products found.</p>}
+        </FadeInSection>
       </main>
     </div>
   )
