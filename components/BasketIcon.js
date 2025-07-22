@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { useBasket } from './BasketContext'
 
 export default function BasketIcon() {
   const [open, setOpen] = useState(false)
+  const { items, removeItem } = useBasket()
 
   return (
     <>
@@ -17,7 +19,18 @@ export default function BasketIcon() {
       </button>
       {open && (
         <div className="basket">
-          <p>Your basket is empty.</p>
+          {items.length === 0 ? (
+            <p>Your basket is empty.</p>
+          ) : (
+            <ul>
+              {items.map(item => (
+                <li key={item.id}>
+                  {item.name}{' '}
+                  <button onClick={() => removeItem(item.id)}>x</button>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       )}
     </>

@@ -138,6 +138,50 @@ h2 {
   margin-top: 2rem;
 }
 
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.lightbox-content {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-content img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--corner-radius);
+}
+
+.lightbox .prev,
+.lightbox .next {
+  position: absolute;
+  background: none;
+  border: none;
+  color: var(--white-color);
+  font-size: 2rem;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox .prev {
+  left: 1rem;
+}
+
+.lightbox .next {
+  right: 1rem;
+}
+
 .grid-item {
   margin-bottom: 1rem;
   border-radius: var(--corner-radius);
