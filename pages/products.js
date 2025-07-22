@@ -2,17 +2,20 @@ import Head from 'next/head'
 import Menu from '../components/Menu'
 import FadeInSection from '../components/FadeInSection'
 import { useRouter } from 'next/router'
+import Image from 'next/image'
+import { useBasket } from '../components/BasketContext'
 
 const products = [
-  { id: 1, name: 'Wooden Rattle' },
-  { id: 2, name: 'Stacking Rings' },
-  { id: 3, name: 'Pull-Along Moose' },
-  { id: 4, name: 'Baby Gym' },
-  { id: 5, name: 'Teething Ring' }
+  { id: 1, name: 'Wooden Rattle', image: '/sample1.svg' },
+  { id: 2, name: 'Stacking Rings', image: '/sample2.svg' },
+  { id: 3, name: 'Pull-Along Moose', image: '/sample3.svg' },
+  { id: 4, name: 'Baby Gym', image: '/sample1.svg' },
+  { id: 5, name: 'Teething Ring', image: '/sample2.svg' }
 ]
 
 export default function Products() {
   const router = useRouter()
+  const { addItem } = useBasket()
   const query = router.query.q ? String(router.query.q).toLowerCase() : ''
   const filtered = products.filter(p => p.name.toLowerCase().includes(query))
 
@@ -25,11 +28,20 @@ export default function Products() {
       <main>
         <FadeInSection>
           <h1>Products</h1>
-          <ul>
+          <div className="cards">
             {filtered.map(p => (
-              <li key={p.id}>{p.name}</li>
+              <div key={p.id} className="card">
+                <Image
+                  src={p.image}
+                  alt={p.name}
+                  width={150}
+                  height={150}
+                />
+                <h3>{p.name}</h3>
+                <button onClick={() => addItem(p)}>Add to basket</button>
+              </div>
             ))}
-          </ul>
+          </div>
           {filtered.length === 0 && <p>No products found.</p>}
         </FadeInSection>
       </main>
