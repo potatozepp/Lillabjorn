@@ -1,64 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=DM+Sans:wght@400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mansalva&display=swap');
 
-
 :root {
   --background-color: #eefdef;
   --primary-color: #a490b8;
   --accent-color: #81af8f;
   --white-color: #fff;
   --font-family: 'Poppins', 'DM Sans', Arial, sans-serif;
-  --corner-radius: 20px;
+  --corner-radius: 16px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
-
+/* Base styles */
 body {
   font-family: var(--font-family);
   margin: 0;
   padding: 0;
   background-color: var(--background-color);
-  color: var(--primary-color);
+  color: #333;
+  line-height: 1.6;
 }
 
+/* Main layout */
 main {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 1rem;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
   background: var(--white-color);
   border-radius: var(--corner-radius);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-md);
 }
 
-h1 {
+h1, h2 {
   color: var(--primary-color);
-  font-family: 'Mansalva', Arial, sans-serif;
-
+  font-family: 'Mansalva', cursive;
+  margin-bottom: 1rem;
 }
 
-/* Navigation menu */
+h2 {
+  font-size: 1.6rem;
+}
+
+/* Menu */
 .menu {
   background-color: var(--accent-color);
-  padding: 0.5rem 1rem;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 0.75rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
   position: relative;
-  gap: 1rem;
-}
-
-.menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 1rem;
-}
-
-.menu a {
-  text-decoration: none;
-  color: var(--white-color);
-  font-weight: bold;
+  box-shadow: var(--shadow-sm);
+  z-index: 10;
 }
 
 .logo {
@@ -68,62 +63,118 @@ h1 {
 .logo-link {
   display: flex;
   align-items: center;
-}
-
-/* Card styles */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.card {
-  background: #fff;
-  padding: 1rem;
-  border-radius: var(--corner-radius);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 200px;
-  text-align: center;
-  display: block;
-}
-
-.card img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--corner-radius);
-  display: block;
-}
-
-/* Search form */
-.menu .search {
-  margin: auto;
+  gap: 0.5rem;
 }
 
 .menu .search input {
-  padding: 0.25rem 0.5rem;
+  padding: 0.5rem 1rem;
   border-radius: var(--corner-radius);
-  border: 1px solid #ccc;
+  border: none;
+  font-size: 0.9rem;
+  width: 200px;
+  transition: box-shadow 0.3s ease;
+}
+
+.menu .search input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--white-color);
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  opacity: 0.8;
+}
+
+/* Burger menu (mobile) */
+.burger {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--white-color);
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: var(--white-color);
+  border-radius: var(--corner-radius);
+  box-shadow: var(--shadow-sm);
+  padding: 1.25rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.image-grid {
+  column-count: 4;
+  column-gap: 1rem;
+  margin-top: 2rem;
+}
+
+.grid-item {
+  margin-bottom: 1rem;
+  border-radius: var(--corner-radius);
+  overflow: hidden;
+  display: block;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--corner-radius);
+}
+
+/* Optional hover effect */
+.grid-item:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
 }
 
 
-/* Floating basket button */
+/* Floating basket */
 .basket-button {
   position: fixed;
-  bottom: 1rem;
-  right: 1rem;
+  bottom: 1.5rem;
+  right: 1.5rem;
   background-color: var(--accent-color);
-  color: #fff;
+  color: var(--white-color);
   border: none;
   border-radius: 50%;
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: var(--shadow-md);
   cursor: pointer;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .basket-button svg {
@@ -134,93 +185,69 @@ h1 {
 
 .basket {
   position: fixed;
-  bottom: 4rem;
-  right: 1rem;
-  background: #fff;
+  bottom: 6rem;
+  right: 1.5rem;
+  background: var(--white-color);
   border-radius: var(--corner-radius);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 1rem;
+  box-shadow: var(--shadow-md);
+  z-index: 20;
 }
 
-/* Scroll animation */
+/* Animation */
 .fade-in-section {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .fade-in-section.is-visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
 }
 
-.burger {
-  display: none;
-  background: none;
-  font-size: 2rem;
-  border: none;
-  cursor: pointer;
-  color: var(--white-color)
+@media (max-width: 1024px) {
+  .image-grid {
+    column-count: 3;
+  }
 }
 
-.nav-links {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-}
-
+/* Responsive nav */
 @media (max-width: 768px) {
   .burger {
     display: block;
   }
 
   .nav-links {
+    flex-direction: column;
+    background: var(--accent-color);
+    width: 100%;
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
-    flex-direction: column;
     display: none;
-    background-color: var(--accent-color);
+    padding: 1rem 0;
   }
 
   .nav-links.open {
     display: flex;
   }
 
-  .menu {
-    flex-wrap: wrap;
-    z-index: 999;
-  }
-
-  .menu ul {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .menu li {
-    margin: 0.25rem auto;
-  }
-
   .menu .search {
-    width: 50%;
+    width: 100%;
+    order: 3;
+    margin-top: 0.5rem;
   }
 
   .menu .search input {
     width: 100%;
-    text-align: center;
   }
 
-  main {
-    margin: 1rem;
-  }
-
-  .cards {
+  .menu {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
-
-  .card {
-    width: 100%;
+   .image-grid {
+    column-count: 2;
   }
 }

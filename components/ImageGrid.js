@@ -2,15 +2,15 @@ import Image from 'next/image'
 
 export default function ImageGrid({ images }) {
   return (
-      <div className="cards">
+    <div className="image-grid">
       {images.map((image, idx) => (
-        <div key={idx} className="card">
+        <div key={idx} className="grid-item">
           <Image
             src={image.src}
             alt={image.alt}
-            width={300}
-            height={200}
-            sizes="(max-width: 600px) 100vw, 33vw"
+            width={image.width}
+            height={image.height}
+            style={{ borderRadius: 'var(--corner-radius)' }}
           />
         </div>
       ))}

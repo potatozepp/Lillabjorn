@@ -6,14 +6,26 @@ import ImageGrid from '../components/ImageGrid'
 import FadeInSection from '../components/FadeInSection'
 
 export async function getStaticProps() {
-  const dir = path.join(process.cwd(), 'public/gallery')
-  const files = fs.readdirSync(dir)
+  const galleryDir = path.join(process.cwd(), 'public', 'gallery')
+  const files = fs.readdirSync(galleryDir)
   const images = files
     .filter(f => /\.(png|jpe?g|gif|webp)$/i.test(f))
-    .map(name => ({ src: `/gallery/${name}`, alt: name }))
-    .slice(0, 6)
+    .map(filename => {
+      let dimensions = { width: 500, height: 700 }
+
+      return {
+        src: `/gallery/${filename}`, // URL path for browser
+        alt: filename,
+        width: dimensions.width,
+        height: dimensions.height,
+      }
+    })
+    .slice(0, 11)
+
   return { props: { images } }
 }
+
+
 export default function Home({ images }) {
   return (
     <div>
