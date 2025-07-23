@@ -3,6 +3,7 @@ import Menu from '../components/Menu'
 import FadeInSection from '../components/FadeInSection'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+import { useState } from 'react'
 import { useBasket } from '../components/BasketContext'
 
 const products = [
@@ -10,12 +11,17 @@ const products = [
   { id: 2, name: 'Stacking Rings', image: '/sample2.svg' },
   { id: 3, name: 'Pull-Along Moose', image: '/sample3.svg' },
   { id: 4, name: 'Baby Gym', image: '/sample1.svg' },
-  { id: 5, name: 'Teething Ring', image: '/sample2.svg' }
+  { id: 5, name: 'Teething Ring', image: '/sample2.svg' },
 ]
 
 export default function Products() {
   const router = useRouter()
   const { addItem } = useBasket()
+  const [quantities, setQuantities] = useState({})
+
+  const handleQty = (id, value) =>
+    setQuantities(q => ({ ...q, [id]: Math.max(1, value) }))
+
   const query = router.query.q ? String(router.query.q).toLowerCase() : ''
   const filtered = products.filter(p => p.name.toLowerCase().includes(query))
 
@@ -31,14 +37,17 @@ export default function Products() {
           <div className="cards">
             {filtered.map(p => (
               <div key={p.id} className="card">
-                <Image
-                  src={p.image}
-                  alt={p.name}
-                  width={150}
-                  height={150}
-                />
+                <Image src={p.image} alt={p.name} width={150} height={150} />
                 <h3>{p.name}</h3>
-                <button onClick={() => addItem(p)}>Add to basket</button>
+                <input
+                  type="number"
+                  min="1"
+                  value={quantities[p.id] || 1}
+                  onChange={e => handleQty(p.id, parseInt(e.target.value))}
+                />
+                <button onClick={() => addItem(p, quantities[p.id] || 1)}>
+                  Add to basket
+                </button>
               </div>
             ))}
           </div>
