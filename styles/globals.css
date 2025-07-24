@@ -32,18 +32,68 @@ main {
   box-shadow: var(--shadow-md);
 }
 
+main p {
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+main > p:first-of-type {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+main > p:nth-of-type(2) {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+main p:last-of-type {
+  border-top: 1px solid #ddd;
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+}
+
+main p.signature {
+  text-align: right;
+  font-weight: 500;
+  color: #666;
+  margin-top: -1rem;
+}
+
+main > section {
+  margin-top: 3rem;
+}
+
+main section:not(:last-of-type) {
+  border-bottom: 1px solid #e2e2e2;
+  padding-bottom: 2.5rem;
+}
+
+/* Headings */
 h1, h2 {
   color: var(--primary-color);
   font-family: 'Mansalva', cursive;
   margin-bottom: 1rem;
 }
 
-h2 {
-  font-size: 1.6rem;
+main h1 {
+  font-size: 2.2rem;
+  text-align: center;
 }
 
-/* Menu */
+h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  text-align: center;
+}
 
+/* Navigation */
 .nav-wrapper {
   position: relative;
 }
@@ -98,7 +148,6 @@ h2 {
   box-shadow: 0 0 0 2px var(--primary-color);
 }
 
-/* Nav links */
 .nav-links {
   display: flex;
   gap: 1.5rem;
@@ -118,7 +167,6 @@ h2 {
   opacity: 0.8;
 }
 
-/* Burger menu (mobile) */
 .burger {
   display: none;
   font-size: 1.8rem;
@@ -128,26 +176,43 @@ h2 {
   color: var(--white-color);
 }
 
-/* Cards */
+/* Cards (shared + reviews) */
 .cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
-  margin-top: 2rem;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .card {
   background-color: var(--white-color);
   border-radius: var(--corner-radius);
   box-shadow: var(--shadow-sm);
-  padding: 1.25rem;
-  text-align: center;
+  padding: 1.25rem 1.5rem;
+  width: 280px;
+  max-width: 100%;
+  font-size: 0.95rem;
+  text-align: left;
+  position: relative;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-3px);
   box-shadow: var(--shadow-md);
+}
+
+.card p {
+  margin: 0.75rem 0;
+  color: #444;
+}
+
+.card p:last-child {
+  font-style: italic;
+  text-align: right;
+  margin-top: 1rem;
+  color: #666;
 }
 
 .card form {
@@ -187,13 +252,33 @@ h2 {
   transform: translateY(-2px);
 }
 
-
+/* Gallery grid */
 .image-grid {
   column-count: 4;
   column-gap: 1rem;
   margin-top: 2rem;
 }
 
+.grid-item {
+  margin-bottom: 1rem;
+  border-radius: var(--corner-radius);
+  overflow: hidden;
+  display: block;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--corner-radius);
+}
+
+.grid-item:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
+
+/* Lightbox */
 .lightbox {
   position: fixed;
   top: 0;
@@ -239,28 +324,7 @@ h2 {
   right: 1rem;
 }
 
-.grid-item {
-  margin-bottom: 1rem;
-  border-radius: var(--corner-radius);
-  overflow: hidden;
-  display: block;
-}
-
-.grid-item img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--corner-radius);
-}
-
-/* Optional hover effect */
-.grid-item:hover {
-  transform: scale(1.02);
-  transition: transform 0.2s ease;
-}
-
-
-/* Floating basket */
+/* Basket */
 .basket-button {
   position: fixed;
   bottom: 1.5rem;
@@ -380,7 +444,6 @@ h2 {
   font-style: italic;
 }
 
-
 /* Animation */
 .fade-in-section {
   opacity: 0;
@@ -403,7 +466,6 @@ h2 {
   z-index: 999;
   pointer-events: none;
   transition-duration: 0.4s;
-
 }
 
 .added-checkmark.show {
@@ -411,16 +473,26 @@ h2 {
   transition-duration: 0.4s;
 }
 
-
-
+/* Responsive layout */
 @media (max-width: 1024px) {
   .image-grid {
     column-count: 3;
   }
 }
 
-/* Responsive nav */
 @media (max-width: 768px) {
+  main {
+    padding: 1.5rem;
+  }
+
+  main h1 {
+    font-size: 1.8rem;
+  }
+
+  main p {
+    font-size: 1rem;
+  }
+
   .burger {
     display: block;
   }
@@ -449,11 +521,6 @@ h2 {
     text-align: center;
   }
 
-  .menu {
-    align-items: center;
-    justify-content: space-between;
-  }
-  
   .image-grid {
     column-count: 2;
   }
