@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=DM+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mansalva&display=swap');
+
+:root {
+  --background-color: #eefdef;
+  --primary-color: #a490b8;
+  --accent-color: #81af8f;
+  --white-color: #fff;
+  --font-family: 'Poppins', 'DM Sans', Arial, sans-serif;
+  --corner-radius: 16px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Base styles */
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Main layout */
+main {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: var(--white-color);
+  border-radius: var(--corner-radius);
+  box-shadow: var(--shadow-md);
+}
+
+main p {
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+main > p:first-of-type {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+main > p:nth-of-type(2) {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+main p:last-of-type {
+  border-top: 1px solid #ddd;
+  padding-top: 1.5rem;
+  margin-top: 2rem;
+}
+
+main p.signature {
+  text-align: right;
+  font-weight: 500;
+  color: #666;
+  margin-top: -1rem;
+}
+
+main > section {
+  margin-top: 3rem;
+}
+
+main section:not(:last-of-type) {
+  border-bottom: 1px solid #e2e2e2;
+  padding-bottom: 2.5rem;
+}
+
+/* Headings */
+h1, h2 {
+  color: var(--primary-color);
+  font-family: 'Mansalva', cursive;
+  margin-bottom: 1rem;
+}
+
+main h1 {
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+h2 {
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+  font-size: 1.7rem;
+  text-align: center;
+}
+
