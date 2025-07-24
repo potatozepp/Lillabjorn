@@ -1,0 +1,120 @@
+/* Basket */
+.basket-button {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: var(--accent-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+}
+
+.basket-button svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.basket {
+  position: fixed;
+  bottom: 6rem;
+  right: 1.5rem;
+  background: var(--white-color);
+  border-radius: var(--corner-radius);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--shadow-md);
+  z-index: 20;
+  min-width: 260px;
+  font-size: 0.95rem;
+}
+
+.basket ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.basket-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75rem;
+}
+
+.basket-item .item-name {
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 0.25rem;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.qty-controls button {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background-color 0.2s ease;
+}
+
+.qty-controls button:hover {
+  background-color: #8b79a2;
+}
+
+.qty-controls span {
+  min-width: 1.5rem;
+  text-align: center;
+  display: inline-block;
+}
+
+.remove-btn {
+  background-color: transparent;
+  color: #999;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8rem;
+  border: 1px solid #ddd;
+}
+
+.remove-btn:hover {
+  color: #c00;
+  border-color: #c00;
+}
+
+.checkout-link {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: var(--corner-radius);
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  width: calc(100% - 2rem);
+  transition: background-color 0.3s ease;
+}
+
+.checkout-link:hover {
+  background-color: #6f9f7c;
+}
+
+.empty-message {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+}
+

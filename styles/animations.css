@@ -1,0 +1,29 @@
+/* Animation */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.added-checkmark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  font-size: 10rem;
+  color: var(--accent-color);
+  opacity: 0;
+  z-index: 999;
+  pointer-events: none;
+  transition-duration: 0.4s;
+}
+
+.added-checkmark.show {
+  opacity: 0.33;
+  transition-duration: 0.4s;
+}
+

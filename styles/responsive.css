@@ -1,0 +1,52 @@
+/* Responsive layout */
+@media (max-width: 1024px) {
+  .image-grid {
+    column-count: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 1.5rem;
+  }
+
+  main h1 {
+    font-size: 1.8rem;
+  }
+
+  main p {
+    font-size: 1rem;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    background: var(--accent-color);
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    padding: 1rem 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .menu .search {
+    width: 50%;
+  }
+
+  .menu .search input {
+    width: 100%;
+    text-align: center;
+  }
+
+  .image-grid {
+    column-count: 2;
+  }
+}
