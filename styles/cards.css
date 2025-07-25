@@ -47,7 +47,7 @@
 }
 
 .card input[type="number"] {
-  width: 60px;
+  width: 48px;
   padding: 0.4rem 0.6rem;
   border: 1px solid #ccc;
   border-radius: var(--corner-radius);
@@ -60,7 +60,7 @@
   background-color: var(--primary-color);
   color: var(--white-color);
   border: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1.25rem;
   border-radius: var(--corner-radius);
   font-weight: 600;
   font-family: var(--font-family);
@@ -73,4 +73,23 @@
   background-color: #8b79a2;
   transform: translateY(-2px);
 }
+
+.card img {
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.card h3 {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  margin-top: 0.75rem;
+}
+
 

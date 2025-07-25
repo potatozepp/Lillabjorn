@@ -8,11 +8,11 @@ import { useBasket } from '../components/BasketContext'
 import { FaCheckCircle } from 'react-icons/fa'
 
 const products = [
-  { id: 1, name: 'Wooden Rattle', image: '/sample1.svg' },
-  { id: 2, name: 'Stacking Rings', image: '/sample2.svg' },
-  { id: 3, name: 'Pull-Along Moose', image: '/sample3.svg' },
-  { id: 4, name: 'Baby Gym', image: '/sample1.svg' },
-  { id: 5, name: 'Teething Ring', image: '/sample2.svg' },
+  { id: 1, name: 'Wooden Rattle', image: '/rattle.png' },
+  { id: 2, name: 'Stacking Rings', image: '/rings.png' },
+  { id: 3, name: 'Pull-Along Moose', image: '/moose.png' },
+  { id: 4, name: 'Baby Gym', image: '/gym.png' },
+  { id: 5, name: 'Teething Ring', image: '/teething.png' },
 ]
 
 export default function Products() {
