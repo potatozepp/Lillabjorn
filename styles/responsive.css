@@ -1,7 +1,7 @@
 /* Responsive layout */
 @media (max-width: 1024px) {
   .image-grid {
-    column-count: 3;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -47,6 +47,6 @@
   }
 
   .image-grid {
-    column-count: 2;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
