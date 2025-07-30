@@ -1,12 +1,12 @@
 /* Gallery grid */
 .image-grid {
-  column-count: 4;
-  column-gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
   margin-top: 2rem;
 }
 
 .grid-item {
-  margin-bottom: 1rem;
   border-radius: var(--corner-radius);
   overflow: hidden;
   display: block;

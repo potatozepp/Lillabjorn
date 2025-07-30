@@ -15,7 +15,7 @@ export default function Menu() {
           <input
             type="search"
             name="q"
-            placeholder="Search"
+            placeholder="Search products"
             aria-label="Search"
           />
         </form>
