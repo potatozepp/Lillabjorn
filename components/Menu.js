@@ -8,7 +8,7 @@ export default function Menu() {
     <div className="nav-wrapper">
       <nav className="menu">
         <Link href="/" className="logo-link">
-          <img src="/logo.svg" alt="Lilla Björn logo" className="logo" />
+          <img src="/logo.png" alt="Lilla Björn logo" className="logo" />
         </Link>
 
         <form action="/products" method="get" className="search">
