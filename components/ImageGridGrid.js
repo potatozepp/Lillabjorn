@@ -15,22 +15,24 @@ export default function ImageGrid({ images }) {
 
   return (
     <>
-      <div className="image-justified">
+      <div className="image-grid">
         {images.map((image, idx) => {
-          const aspectRatio = image.width / image.height
-          const height = 150 // all images get same height
-          const width = Math.round(height * aspectRatio)
+          const isHorizontal = image.width > image.height
+          const className = `grid-item ${isHorizontal ? 'horizontal' : 'vertical'}`
 
           return (
-            <img
-              key={idx}
+          <div
+            key={idx}
+            className={className} 
+            onClick={() => setActive(idx)}
+          >
+            <Image
               src={image.src}
               alt={image.alt}
-              width={width}
-              height={height}
-              className="justified-image"
-              onClick={() => setActive(idx)}
+              width={image.width}
+              height={image.height}
             />
+          </div>
           )
         })}
       </div>

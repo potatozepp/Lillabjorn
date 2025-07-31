@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import Head from 'next/head'
+import sizeOf from 'image-size'
 import Menu from '../components/Menu'
 import ImageGrid from '../components/ImageGrid'
 import FadeInSection from '../components/FadeInSection'
@@ -11,10 +12,13 @@ export async function getStaticProps() {
   const images = files
     .filter(f => /\.(png|jpe?g|gif|webp)$/i.test(f))
     .map(filename => {
-      let dimensions = { width: 500, height: 700 }
+
+      const filepath = path.join(galleryDir, filename)
+      const buffer = fs.readFileSync(filepath)
+      const dimensions = sizeOf(buffer)
 
       return {
-        src: `/gallery/${filename}`, // URL path for browser
+        src: `/gallery/${filename}`,
         alt: filename,
         width: dimensions.width,
         height: dimensions.height,
